@@ -19,7 +19,11 @@ export const logout=(req,res,next)=>{
             return next(err)
         }
 
-        res.clearCookie("connect.sid")
+        res.clearCookie("connect.sid",{
+            secure:process.env.NODE_ENV==="Development"? false:true,
+            sameSite:process.env.NODE_ENV==="Development"? false:"none",
+            httpOnly:process.env.NODE_ENV==="Development"? false:true,
+          })
         res.status(200).json({
             success:true,
             message:"Logged Out"

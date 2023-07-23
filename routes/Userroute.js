@@ -8,7 +8,7 @@ const router=express.Router()
 
 router.get("/googlelogin",passport.authenticate("google",{scope:["profile"]}))
 
-router.get("/login",passport.authenticate("google"),(req,res)=>{
+router.get("/login",passport.authenticate("google",{successRedirect:process.env.FRONTEND_URL}),(req,res)=>{
     res.send("Logged In")
 })
 
