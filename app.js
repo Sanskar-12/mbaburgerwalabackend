@@ -7,6 +7,7 @@ import passport from "passport";
 import cookieParser from "cookie-parser";
 import { ErrorMiddleware } from "./middlewares/ErrorMiddleware.js";
 import OrderRoute from "./routes/Orderroute.js"
+import ContactRoute from "./routes/Contactroute.js"
 import cors from "cors"
 
 const app = express();
@@ -45,6 +46,7 @@ connectPassport();
 
 app.use("/api/v1", UserRouter);
 app.use("/api/v1",OrderRoute)
+app.use("/api/v1",ContactRoute)
 
 export default app;
 
