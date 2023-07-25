@@ -61,7 +61,7 @@ export const placeOrderOnline = catchAsyncError(async (req, res, next) => {
     user,
   };
 
-  var options = {
+  const options = {
     amount: Number(totalAmount) * 100,
     currency: "INR",
   };

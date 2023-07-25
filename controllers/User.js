@@ -67,6 +67,7 @@ export const adminStats=catchAsyncError(async(req,res,next)=>{
             preparing:preparingOrders.length,
             shipping:shippedOrders.length,
             delivered:deliveredOrders.length
-        }
+        },
+        totalIncome,
     })
 })
